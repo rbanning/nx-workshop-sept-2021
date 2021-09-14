@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
+import { IGame } from '@bg-hoard/api/util-interface';
 
 @Injectable()
 export class AppService {
   
-  private games = [
+  private games: IGame[] = [
     {
       id: 'settlers-in-the-can',
       name: 'Settlers in the Can',

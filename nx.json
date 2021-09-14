@@ -26,9 +26,6 @@
     "api": {
       "tags": []
     },
-    "api-util-interface": {
-      "tags": []
-    },
     "store": {
       "tags": []
     },
@@ -43,6 +40,9 @@
       "tags": []
     },
     "store-util-formatters": {
+      "tags": []
+    },
+    "util-interface": {
       "tags": []
     }
   },

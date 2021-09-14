@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
+import { IGame } from "@bg-hoard/util-interface";
+
 import { formatRating } from "@bg-hoard/store/util-formatters";
 import { Observable, of } from 'rxjs';
 
@@ -11,7 +13,7 @@ import { Observable, of } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title = 'Board Game Hoard';
-  games$: Observable<any[]>;
+  games$: Observable<IGame[]>;
   formatRating = formatRating;
 
   constructor(

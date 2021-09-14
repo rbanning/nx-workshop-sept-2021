@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.games$ = this.http.get<any[]>('/api/games');
+    this.games$ = this.http.get<IGame[]>('/api/games');
   }
 
 }

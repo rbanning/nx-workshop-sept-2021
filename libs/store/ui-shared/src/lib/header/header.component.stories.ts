@@ -23,5 +23,19 @@ const Template: Story<HeaderComponent> = (args: HeaderComponent) => ({
 
 export const Primary = Template.bind({});
 Primary.args = {
-    title:  '',
+    title:  'Primary Header Title',
+    color: 'primary'
 }
+
+export const Accent = Template.bind({});
+Accent.args = {
+    title:  'Accent Header Title',
+    color: 'accent'
+}
+
+export const Warn = Template.bind({});
+Warn.args = {
+    title:  'Warn Header Title',
+    color: 'warn'
+}
+

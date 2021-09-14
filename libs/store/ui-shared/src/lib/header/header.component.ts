@@ -9,5 +9,6 @@ export class HeaderComponent {
   @Input()
   title!: string;
 
-
+  @Input()
+  color: "primary" | "accent" | "warn" = "primary";
 }

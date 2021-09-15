@@ -46,7 +46,7 @@
       "tags": ["scope:store", "type:shared"]
     },
     "store-ui-shared-e2e": {
-      "tags": [],
+      "tags": ["scope:store"],
       "implicitDependencies": ["store-ui-shared"]
     },
     "store-util-formatters": {

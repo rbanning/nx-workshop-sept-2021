@@ -19,9 +19,14 @@
         "message": "Which type of library are you creating?",
         "type": "list",
         "items": [
-          { "value": "store", "label": "store" },
-          { "value": "api", "label": "api" },
-          { "value": "shared", "label": "shared" }
+          {
+            "value": "store",
+            "label": "store"
+          },
+          {
+            "value": "shared",
+            "label": "shared"
+          }
         ]
       },
       "$default": {

@@ -11,12 +11,13 @@
     },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
+    ".github/workflows/ci.yml": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
         "cacheableOperations": [
           "build",
@@ -24,36 +25,64 @@
           "test",
           "e2e",
           "build-storybook"
-        ]
+        ],
+        "accessToken": "M2Q0MWViMzQtYTlhMS00YmVjLWE4MmItMjc3MjQwODNkOTUzfHJlYWQtd3JpdGU="
       }
     }
   },
   "projects": {
     "api": {
-      "tags": ["scope:store", "type:api"]
+      "tags": [
+        "scope:store",
+        "type:api"
+      ]
     },
     "store": {
-      "tags": ["scope:store", "type:app"]
+      "tags": [
+        "scope:store",
+        "type:app"
+      ]
     },
     "store-e2e": {
-      "tags": ["scope:store", "type:test"],
-      "implicitDependencies": ["store"]
+      "tags": [
+        "scope:store",
+        "type:test"
+      ],
+      "implicitDependencies": [
+        "store"
+      ]
     },
     "store-feature-game-detail": {
-      "tags": ["scope:store", "type:feature"]
+      "tags": [
+        "scope:store",
+        "type:feature"
+      ]
     },
     "store-ui-shared": {
-      "tags": ["scope:store", "type:shared"]
+      "tags": [
+        "scope:store",
+        "type:shared"
+      ]
     },
     "store-ui-shared-e2e": {
-      "tags": ["scope:store"],
-      "implicitDependencies": ["store-ui-shared"]
+      "tags": [
+        "scope:store"
+      ],
+      "implicitDependencies": [
+        "store-ui-shared"
+      ]
     },
     "store-util-formatters": {
-      "tags": ["scope:store", "type:util"]
+      "tags": [
+        "scope:store",
+        "type:util"
+      ]
     },
     "util-interface": {
-      "tags": ["scope:shared", "type:util"]
+      "tags": [
+        "scope:shared",
+        "type:util"
+      ]
     }
   },
   "targetDependencies": {

@@ -24,6 +24,15 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.games$ = this.http.get<IGame[]>('/api/games');
+
+    //Randomize the title
+    const MAX = 15;
+    const arr = this.title.split(' ');
+    for (let count = 0; count < MAX; count++) {
+      const index = Math.floor(Math.random() * arr.length);
+      const word = arr.splice(index, 1)[0];
+      arr.push(word);      
+    }
   }
 
 }

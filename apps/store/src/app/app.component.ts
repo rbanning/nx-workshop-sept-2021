@@ -33,6 +33,8 @@ export class AppComponent implements OnInit {
       const word = arr.splice(index, 1)[0];
       arr.push(word);      
     }
+
+    this.title = arr.join(" ");
   }
 
 }

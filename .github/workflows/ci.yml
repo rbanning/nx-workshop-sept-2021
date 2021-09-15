@@ -3,12 +3,24 @@ name: Run CI checks # Name appears on GitHub Actions dashboard
 on: [pull_request]  # Workflow runs on Pull Requests
 
 jobs:
-    test-store:               # unique identifier
-      runs-on: ubuntu-latest  #image where our job will run
-      name: Check Affected        # Name appears on the Actions UI
-      steps:
-        - uses: actions/checkout@v1     # checkout whatever branch the PR is using
-        - uses: bahmutov/npm-install@v1 # trigger an `npm install`
-        - run: npm run nx affected:lint -- --base=main   # lint the "store" project
-        - run: npm run nx affected:test -- --base=main    # test the "store" project
-        - run: npm run nx affected:build -- --base=main    # build the "store" project
+    build:
+    runs-on: ubuntu-latest
+    name: Building affected apps
+    steps:
+      - uses: actions/checkout@v1
+      - uses: bahmutov/npm-install@v1.4.5
+      - run: npm run nx affected -- --target=build --base=origin/master --parallel
+  test:
+    runs-on: ubuntu-latest
+    name: Testing affected apps
+    steps:
+      - uses: actions/checkout@v1
+      - uses: bahmutov/npm-install@v1.4.5
+      - run: npm run nx affected -- --target=test --base=origin/master --parallel
+  lint:
+    runs-on: ubuntu-latest
+    name: Linting affected apps
+    steps:
+      - uses: actions/checkout@v1
+      - uses: bahmutov/npm-install@v1.4.5
+      - run: npm run nx affected -- --target=lint --base=origin/master --parallel

@@ -2,8 +2,8 @@ name: Run CI checks # Name appears on GitHub Actions dashboard
 
 on: [pull_request]  # Workflow runs on Pull Requests
 
-env:
-  NX_BRANCH: ${{ github.event.number }}
+##env:
+  ##NX_BRANCH: ${{ github.event.number }}   ### What is this???
 
 jobs:
   build:

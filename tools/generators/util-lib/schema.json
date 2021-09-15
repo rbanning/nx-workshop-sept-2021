@@ -11,7 +11,24 @@
         "$source": "argv",
         "index": 0
       }
+    },
+    "directory": {
+      "type": "string",
+      "description": "Library directory",
+      "x-prompt": {
+        "message": "Which type of library are you creating?",
+        "type": "list",
+        "items": [
+          { "value": "store", "label": "store" },
+          { "value": "api", "label": "api" },
+          { "value": "shared", "label": "shared" }
+        ]
+      },
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
     }
   },
-  "required": ["name"]
+  "required": ["name", "directory"]
 }

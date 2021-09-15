@@ -2,6 +2,9 @@ name: Run CI checks # Name appears on GitHub Actions dashboard
 
 on: [pull_request]  # Workflow runs on Pull Requests
 
+env:
+  NX_BRANCH: ${{ github.event.number }}
+
 jobs:
   build:
     runs-on: ubuntu-latest

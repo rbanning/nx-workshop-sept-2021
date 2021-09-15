@@ -1,0 +1,21 @@
+name: Run CI checks # Name appears on GitHub Actions dashboard
+
+on: [pull_request]  # Workflow runs on Pull Requests
+
+jobs:
+    test-store:               # unique identifier
+      runs-on: ubuntu-latest  #image where our job will run
+      name: Lint/Test Score        # Name appears on the Actions UI
+      steps:
+        - uses: actions/checkout@v1     # checkout whatever branch the PR is using
+        - uses: bahmutov/npm-install@v1 # trigger an `npm install`
+        - run: npm run nx lint store    # lint the "store" project
+        - run: npm run nx test store    # test the "store" project
+    test-api:
+      runs-on: ubuntu-latest  #image where our job will run
+      name: Lint/Test API        # Name appears on the Actions UI
+      steps:
+        - uses: actions/checkout@v1     # checkout whatever branch the PR is using
+        - uses: bahmutov/npm-install@v1 # trigger an `npm install`
+        - run: npm run nx lint api    # lint the "store" project
+        - run: npm run nx test api    # test the "store" project

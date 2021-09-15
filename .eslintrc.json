@@ -13,9 +13,13 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
-              }
+                "sourceTag": "scope:store",
+                "onlyDependOnLibsWithTags": ["scope:store", "scope:shared"]
+              },
+              {
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": ["scope:shared"]
+              },
             ]
           }
         ]
@@ -25,7 +29,7 @@
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nrwl/nx/typescript"],
       "rules": {
-        "@typescript-eslint/no-inferrable-types": false
+        "@typescript-eslint/no-inferrable-types": 0
       }
     },
     {

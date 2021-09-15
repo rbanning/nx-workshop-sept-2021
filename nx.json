@@ -30,30 +30,30 @@
   },
   "projects": {
     "api": {
-      "tags": []
+      "tags": ["scope:store", "type:api"]
     },
     "store": {
-      "tags": []
+      "tags": ["scope:store", "type:app"]
     },
     "store-e2e": {
-      "tags": [],
+      "tags": ["scope:store", "type:test"],
       "implicitDependencies": ["store"]
     },
     "store-feature-game-detail": {
-      "tags": []
+      "tags": ["scope:store", "type:feature"]
     },
     "store-ui-shared": {
-      "tags": []
+      "tags": ["scope:store", "type:shared"]
     },
     "store-ui-shared-e2e": {
       "tags": [],
       "implicitDependencies": ["store-ui-shared"]
     },
     "store-util-formatters": {
-      "tags": []
+      "tags": ["scope:store", "type:util"]
     },
     "util-interface": {
-      "tags": []
+      "tags": ["scope:shared", "type:util"]
     }
   },
   "targetDependencies": {

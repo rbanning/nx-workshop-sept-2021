@@ -11,4 +11,7 @@ export class HeaderComponent {
 
   @Input()
   color: "primary" | "accent" | "warn" = "primary";
+
+  @Input()
+  username: string | null = null;
 }

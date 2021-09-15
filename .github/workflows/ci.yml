@@ -5,9 +5,10 @@ on: [pull_request]  # Workflow runs on Pull Requests
 jobs:
     test-store:               # unique identifier
       runs-on: ubuntu-latest  #image where our job will run
-      name: Lint/Test Affected        # Name appears on the Actions UI
+      name: Check Affected        # Name appears on the Actions UI
       steps:
         - uses: actions/checkout@v1     # checkout whatever branch the PR is using
         - uses: bahmutov/npm-install@v1 # trigger an `npm install`
-        - run: npm run affected:lint --base=origin/main   # lint the "store" project
-        - run: npm run affected:test --base=origin/main    # test the "store" project
+        - run: npm run affected:lint --base=main   # lint the "store" project
+        - run: npm run affected:test --base=main    # test the "store" project
+        - run: npm run affected:build --base=main    # build the "store" project

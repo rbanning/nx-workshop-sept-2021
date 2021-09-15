@@ -11,6 +11,7 @@
     },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
+    ".github/workflows/ci.yml": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },

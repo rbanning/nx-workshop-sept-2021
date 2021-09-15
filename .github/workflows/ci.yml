@@ -3,7 +3,7 @@ name: Run CI checks # Name appears on GitHub Actions dashboard
 on: [pull_request]  # Workflow runs on Pull Requests
 
 jobs:
-    build:
+  build:
     runs-on: ubuntu-latest
     name: Building affected apps
     steps:

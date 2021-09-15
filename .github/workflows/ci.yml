@@ -9,6 +9,6 @@ jobs:
       steps:
         - uses: actions/checkout@v1     # checkout whatever branch the PR is using
         - uses: bahmutov/npm-install@v1 # trigger an `npm install`
-        - run: npm run affected:lint --base=main   # lint the "store" project
-        - run: npm run affected:test --base=main    # test the "store" project
-        - run: npm run affected:build --base=main    # build the "store" project
+        - run: npm run affected:lint -- --base=main   # lint the "store" project
+        - run: npm run affected:test -- --base=main    # test the "store" project
+        - run: npm run affected:build -- --base=main    # build the "store" project
